@@ -51,19 +51,6 @@ backtrack original l cell
         sudoku = pipeline $ moveCell original cell (head l)
         correct = (sudoku /= badSudoku)
 
-
--- fillACell :: Sudoku -> Sudoku
--- fillACell sudoku =
---     let Sudoku a b = sudoku in
---     (\(_, v, cell) -> moveCell sudoku cell v) $ head $ sort $ 
---     map (temp b) [(related b cell, cell) | cell <- a]
-
-temp :: Table -> ([Int], Cell) -> (Int, Int, Cell)
-temp s (l, c)
-    | length l > 0 = let v:_ = l in ((length l) + 1, v, c)
-    | otherwise    = let x = (error "\n" ++ show s ++ "\n" ++ show c ++ "\n") in (0, 0, c)
-
-
 moveCell :: Sudoku -> Cell -> Int -> Sudoku
 moveCell s cell v = 
     let Sudoku a b = s 
