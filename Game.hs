@@ -2,11 +2,9 @@ module Game
 (
 ) where
 
+import Utils
 import SudokuTypes
 import Data.List (nub, (\\))
-
--- Utils
-(//) a b = a `div` b
 
 -- Cells affinity
 affinity :: Cell -> Cell -> Bool
@@ -25,3 +23,5 @@ related table target
     | otherwise        = []
     where
         cells = filter (affinity target) table
+
+
