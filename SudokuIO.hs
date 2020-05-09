@@ -23,7 +23,7 @@ loadSudoku file
 
 loadTable :: String -> Int -> Table
 loadTable rawLine n
-    | (length nums == 9)    = [Cell a b c | (a, b, c) <- zip3 (repeat 0) [0..8] nums] 
+    | (length nums == 9)    = [Cell a b c | (a, b, c) <- zip3 (repeat n) [0..8] nums] 
     | otherwise             = error ("Line number " ++ show n ++ " are badformed")
     where 
         nums = [digitToInt c | c <- rawLine, elem c ['0'..'9']]
