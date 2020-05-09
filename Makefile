@@ -5,6 +5,9 @@ file = sudoku.txt
 main: ## Run the Sudoku solver
 	@runhaskell Main.hs $(file)
 
+install:
+	@sudo apt-get install haskell-platform
+
 view: ## display the Makefile
 	@cat Makefile
 
