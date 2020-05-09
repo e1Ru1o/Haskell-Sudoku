@@ -1,6 +1,6 @@
 # Haskell-Sudoku
 
-This project is an implementation of a sudoku solver using **Haskell** programming languaje.
+This project is an implementation of a sudoku solver using **Haskell** programming languaje. For specific details about the code see `doc/Details.pdf`
 
 ## Starting
 To use the project, clone it or download it to your local computer.
