@@ -29,6 +29,16 @@ The default file used for load the initial sudoku is `sudoku.txt`, you could use
 make file="your/sudoku/path"
 ```
 
+### Example:
+If you want to solve the next sudoku:
+
+![Solved Sudoku example](./images/example.png "Solved Sudoku example")
+
+This sudoku is written in the default sodoku file, and after run the aplication produce the next output
+
+![Program Output](./images/output.png "Program Output")
+
+
 ## Authors ✒️
 
 * **Lazaro Raul Iglesias Vera** -- [stdevRulo](https://github.com/stdevRulo)
