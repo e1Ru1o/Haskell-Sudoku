@@ -23,6 +23,12 @@ make
 ```
 That command assume that your **Haskell** installation count with the `runhaskell` program, if it is not the case you could change the `make main` rule or execute the program manually.
 
+The default file used for load the initial sudoku is `sudoku.txt`, you could use another file by typing:
+
+```
+make file="your/sudoku/path"
+```
+
 ## Authors ✒️
 
 * **Lazaro Raul Iglesias Vera** -- [stdevRulo](https://github.com/stdevRulo)
