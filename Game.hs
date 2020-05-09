@@ -1,10 +1,11 @@
 module Game
 ( pipeline
+, check
 ) where
 
 import Utils
 import SudokuTypes
-import Data.List (nub, (\\), sort, concat)
+import Data.List ((\\), sort, concat, and)
 
 -- Cells affinity
 affinity :: Cell -> Cell -> Bool
@@ -19,7 +20,7 @@ affinity (Cell a b c) (Cell d e f)
 
 related :: Table -> Cell -> [Int]
 related table target
-    | length cells > 0 = [1..9] \\ (nub $ map value cells)
+    | length cells > 0 = [1..9] \\ (map value cells)
     | otherwise        = [1..9]
     where
         cells = filter (affinity target) table
@@ -40,3 +41,7 @@ moveCell :: Sudoku -> Cell -> Int -> Sudoku
 moveCell s cell v = 
     let Sudoku a b = s 
     in  Sudoku (a \\ [cell]) (changeValue cell v : b)
+
+-- Sudoku checker
+check :: Table -> Bool
+check table = and [elem (value cell) (related (table \\ [cell]) cell) | cell <- table]
