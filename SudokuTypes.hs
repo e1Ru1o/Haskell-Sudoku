@@ -1,6 +1,9 @@
-module SodukuTypes
-( Sudoku
+module SudokuTypes
+( Cell(..)
+, Table(..)
+, Sudoku(..)
 , done
+, value
 , changeValue
 ) where
 
@@ -13,7 +16,12 @@ data Sudoku = Sudoku Table Table
 instance Show Cell where  
     show (Cell a b c) = "(" ++ (intercalate ", " (map (show) [a, b, c])) ++ ")"
 
+done :: Sudoku -> Bool
 done (Sudoku a _) = length a == 0
 
-changeValue (Cell a b _) v = Cell a b v
+changeValue :: Cell -> Int -> Cell
+changeValue (Cell a b _) v = (Cell a b v)
+
+value :: Cell -> Int
+value (Cell _ _ v) = v
 
