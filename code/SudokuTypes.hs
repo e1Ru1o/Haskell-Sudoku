@@ -11,7 +11,7 @@ import Data.List (intercalate)
 
 data Cell = Cell Int Int Int deriving(Eq, Ord)
 type Table = [Cell]
-data Sudoku = Sudoku Table Table deriving(Eq)
+data Sudoku = Sudoku Table Table
 
 instance Show Cell where  
     show (Cell a b c) = "(" ++ (intercalate ", " (map (show) [a, b, c])) ++ ")"

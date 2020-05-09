@@ -27,14 +27,8 @@ related table target
 
 -- Pipeline
 pipeline :: Sudoku -> Sudoku
-pipeline sudoku
+pipeline sudoku 
     | done sudoku   = sudoku
-    | otherwise     = pipeline $ fillACell sudoku
-
-badSudoku = Sudoku [] [Cell 0 0 0]
-
-fillACell :: Sudoku -> Sudoku
-fillACell sudoku 
     | otherwise     = backtrack sudoku op cell
     where 
         Sudoku ceros nums = sudoku
@@ -44,12 +38,11 @@ fillACell sudoku
 
 backtrack :: Sudoku -> [Int] -> Cell -> Sudoku
 backtrack original l cell
-    | l == []   = badSudoku 
-    | correct   = sudoku
-    | otherwise = backtrack original (tail l) cell
+    | l == []       = original 
+    | done sudoku   = sudoku
+    | otherwise     = backtrack original (tail l) cell
     where
         sudoku = pipeline $ moveCell original cell (head l)
-        correct = (sudoku /= badSudoku)
 
 moveCell :: Sudoku -> Cell -> Int -> Sudoku
 moveCell s cell v = 
