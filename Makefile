@@ -1,9 +1,10 @@
 .DEFAULT_GOAL 	:= main
 
 file = sudoku.txt
+dir	 = $(shell realpath "$(file)")
 
 main: ## Run the Sudoku solver
-	@runhaskell Main.hs $(file)
+	@cd code; runhaskell Main.hs "$(dir)"
 
 install:
 	@sudo apt-get install haskell-platform
