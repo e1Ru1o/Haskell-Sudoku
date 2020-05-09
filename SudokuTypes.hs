@@ -7,7 +7,7 @@ module SudokuTypes
 , changeValue
 ) where
 
-import Data.List
+import Data.List (intercalate)
 
 data Cell = Cell Int Int Int deriving(Eq, Ord)
 type Table = [Cell]
