@@ -41,7 +41,7 @@ This sudoku is written in the default sodoku file, and after run the aplication 
 
 ## Authors ✒️
 
-* **Lazaro Raul Iglesias Vera** -- [stdevRulo](https://github.com/stdevRulo)
+* **Lazaro Raul Iglesias Vera** -- [e1Ru1o](https://github.com/e1Ru1o)
 
 ## License 📄
 
